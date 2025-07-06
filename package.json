@@ -1,0 +1,30 @@
+{
+    "name": "@webergency/iam",
+    "version": "0.0.1",
+    "description": "",
+    "author": "radixxko",
+    "main": "dist/iam.js",
+    "types": "dist/iam.d.ts",
+    "files": [
+        "dist/**/*"
+    ],
+    "scripts": {
+        
+        "clean": "rm -rf ./dist/* node_modules package-lock.json && npm i",
+        "build": "npm run clean && tsc",
+        "version": "npm run build && npm publish && npm run commit && git push",
+        "commit": "node -e \"const version = require('./package.json').version.trim(); require('child_process').execSync('git add . && git commit -m \\\"Version ' + version + '\\\"');\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webergency/iam.git"
+    },
+    "bugs": {
+        "url": "https://github.com/webergency/iam/issues"
+    },
+    "devDependencies": {
+        "@types/node": "^24.0.10",
+        "@webergency-sro/iam-types": "^0.0.14",
+        "typescript": "^5.8.3"
+    }
+}
