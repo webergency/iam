@@ -13,8 +13,8 @@ export default class WebergencyIAM<Schema extends IAMSchema>
 
     constructor( apiKey: string )
     {
-        //this.#api = new API( apiKey, 'https://iam.api.webergency.com' );
-        this.#api = new API( apiKey, 'http://localhost:8082' );
+        this.#api = new API( apiKey, 'https://iam.api.webergency.com' );
+        //this.#api = new API( apiKey, 'http://localhost:8082' );
 
         this.auth = new IAMAuthAPI( this, this.#api );
         this.user = new IAMUserAPI( this, this.#api );
